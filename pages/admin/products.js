@@ -227,7 +227,9 @@ console.log(formValues)
                     </tr>
                   </thead>
                   <tbody>
-                    {products.length > 0 && products && products.map((product) => (
+                    {Array.isArray(products)) ? (
+                 products.length > 0
+                     && products && products.map((product) => (
                       <tr key={product._id} className="border-b">
                         <td className=" p-5 ">
                           {product._id.substring(20, 24)}
@@ -253,7 +255,7 @@ console.log(formValues)
                           </button>
                         </td>
                       </tr>
-                    ))}
+                    ))) :( <div>Not found Product</div>)}
                   </tbody>
                 </table>
               </div>
