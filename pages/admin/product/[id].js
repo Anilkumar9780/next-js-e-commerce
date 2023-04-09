@@ -85,7 +85,6 @@ export default function AdminProductEditScreen() {
       const {
         data: { signature, timestamp },
       } = await axios('/api/admin/cloudinary-sign');
-
       const file = e.target.files[0];
       const formData = new FormData();
       formData.append('file', file);
